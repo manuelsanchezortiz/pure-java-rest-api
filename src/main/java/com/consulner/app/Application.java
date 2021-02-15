@@ -19,7 +19,7 @@ import com.sun.net.httpserver.HttpServer;
 class Application {
 
     public static void main(String[] args) throws IOException {
-        int serverPort = 8000;
+        int serverPort = 8080;
         HttpServer server = HttpServer.create(new InetSocketAddress(serverPort), 0);
 
         RegistrationHandler registrationHandler = new RegistrationHandler(getUserService(), getObjectMapper(),
@@ -51,5 +51,6 @@ class Application {
 
         server.setExecutor(null); // creates a default executor
         server.start();
+		System.out.println("Running...");
     }
 }
